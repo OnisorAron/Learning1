@@ -10,8 +10,8 @@ public class GuessingGame {
 
     //TODO: Pay attention to Lint warnings. This should be package-private. Read about access modifiers in Java if
     //TODO: you don't understand them.
-    public static void startGame() {
-
+    public static void startGuessingGame() {
+        System.out.println("Guessing Game started.");
     }
 
     private static String readString() {
@@ -36,9 +36,10 @@ public class GuessingGame {
         int n = rand.nextInt(MAXIMUM_NUMBER) + 1;
         //TODO: Always use English for naming variables, functions and classes.
         boolean jo = false;
+        int i;
         //TODO: You should not make "jo" part of the for loop's condition, you should check it's value afterwards
         //TODO: instead, to see which message to display to the user.
-        for (int i = 0; i < LIFE_COUNT && !jo ; i++) {
+        for (i = 0; i < LIFE_COUNT && !jo ; i++) {
             int x = readInt();
             if (x == n) {
                 jo = true;
@@ -56,11 +57,11 @@ public class GuessingGame {
             }
             //TODO: Very bad idea to leave this condition within the for loop. Why don't you move it after it?
             //TODO: The for loop should end here.
-            if (i == 4) {
-                System.out.println(username + ", " + "nem talaltad el 5 probalkozasbol!");
-                System.out.println("Sajnalom!");
-                System.out.println("A helyes valasz: " + n);
-            }
+        }
+        if (i == 4) {
+            System.out.println(username + ", " + "nem talaltad el 5 probalkozasbol!");
+            System.out.println("Sajnalom!");
+            System.out.println("A helyes valasz: " + n);
         }
     }
 }
