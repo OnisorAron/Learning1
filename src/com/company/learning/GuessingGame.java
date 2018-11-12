@@ -7,7 +7,7 @@ import java.util.Scanner;
 class GuessingGame {
 
     private static final int LIFE_COUNT = 5;
-    private static final int MAXIMUM_NUMBER = 100;
+    private static final int MAXIMUM_NUMBER = 1;
 
     void startGuessingGame() {
         try {
@@ -26,13 +26,10 @@ class GuessingGame {
                     go = true;
                     break;
                 }
-                if (i == 0 && guess == n) {
-                    break;
-                }
-                if (guess < n && !go) {
+                if (guess < n) {
                     System.out.println("The generated number is higher.");
                 }
-                if (guess > n && !go) {
+                if (guess > n) {
                     System.out.println("The generated number is lower.");
                 }
             }
