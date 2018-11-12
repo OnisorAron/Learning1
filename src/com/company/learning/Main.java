@@ -12,6 +12,8 @@ public class Main {
             System.out.println(" 0 - Exit");
             System.out.println(" 1 - Hello World program");
             System.out.println(" 2 - Guessing game");
+            System.out.println(" 3 - Average of 'n' numbers");
+            System.out.println(" 4 - Checks if a string is palindrome");
             try {
                  n = readNumber();
                 switch (n) {
@@ -25,6 +27,14 @@ public class Main {
                     case 2:
                         System.out.println("Starting the game...");
                         (new GuessingGame()).startGuessingGame();
+                        break;
+                    case 3:
+                        System.out.println("Starting the program...");
+                        (new Average()).startAverage();
+                        break;
+                    case 4:
+                        System.out.println("Starting the program...");
+                        (new Palindrome()).startPalindrome();
                         break;
                 }
             } catch (InputMismatchException ex) {
