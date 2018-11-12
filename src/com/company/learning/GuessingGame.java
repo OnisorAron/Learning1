@@ -17,30 +17,28 @@ class GuessingGame {
         final int n = rand.nextInt(MAXIMUM_NUMBER) + 1;
         System.out.println("Jatekot fogunk jatszani! :)");
         System.out.println("Irj be egy szamot: ");
-        //TODO: Always use English for naming variables, functions and classes.
-        boolean jo = false;
+        boolean go = false;
         int i;
         //TODO: You should not make "jo" part of the for loop's condition, you should check it's value afterwards instead, to see which message to display to the user.
-        for (i = 0; i < LIFE_COUNT && !jo; i++) {
-            //TODO: Always try give meaningful names to variables. X doesn't really describe anything.
-            int x = scanner.nextInt();
-            if (x == n) {
-                jo = true;
+        for (i = 0 ; i < LIFE_COUNT && !go ; i++) {
+            int guess = scanner.nextInt();
+            if (guess == n) {
+                go = true;
                 //TODO: Why don't you break the loop here? And move displaying the message after the loop.
                 System.out.println(username + ", " + "Szerencsed volt es eltalaltad! Gratula");
             }
-            if (i == 0 && x == n) {
+            if (i == 0 && guess == n) {
                 break;
             }
-            if (x < n) {
+            if (guess < n) {
                 System.out.println("A generalt szam nagyobb.");
             }
-            if (x > n) {
+            if (guess > n) {
                 System.out.println("A generalt szam kisebb.");
             }
             //TODO: Very bad idea to leave this condition within the for loop. Why don't you move it after it? The for loop should end here.
         }
-        if (i == 4) {
+        if (i == 4 ) {
             System.out.println(username + ", " + "nem talaltad el 5 probalkozasbol!");
             System.out.println("Sajnalom!");
             System.out.println("A helyes valasz: " + n);
